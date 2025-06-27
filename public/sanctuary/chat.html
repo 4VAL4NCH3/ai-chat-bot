@@ -179,7 +179,7 @@
         font-size: 14px;
         box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     ">
-        🚪 Logout
+        Logout
       </button>
     </div>
 
@@ -191,7 +191,7 @@
 
         // Redirect to Cloudflare Access logout endpoint
         // This will clear the Zero Trust session
-        window.location.href = '/cdn-cgi/access/logout';
+        window.location.href = '/cdn-cgi/access/logout?returnTo=/';
       }
     </script>
 
