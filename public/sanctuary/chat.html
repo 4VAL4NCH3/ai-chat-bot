@@ -167,6 +167,34 @@
       </div>
     </div>
 
+    <!-- Add this to your protected page -->
+    <div style="position: fixed; top: 20px; right: 20px; z-index: 1000;">
+      <button onclick="logout()" style="
+        background: #ff4757;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    ">
+        🚪 Logout
+      </button>
+    </div>
+
+    <script>
+      function logout() {
+        // Clear any local storage/session storage
+        localStorage.clear();
+        sessionStorage.clear();
+
+        // Redirect to Cloudflare Access logout endpoint
+        // This will clear the Zero Trust session
+        window.location.href = '/cdn-cgi/access/logout';
+      }
+    </script>
+
     <footer>
       <p>Cloudflare Workers AI Chat Template &copy; 2025</p>
     </footer>
