@@ -189,10 +189,10 @@
         localStorage.clear();
         sessionStorage.clear();
 
-        // Redirect to Cloudflare Access logout endpoint
-        // This will clear the Zero Trust session
-        window.location.href = 'https://dev-rwy1lchhchbalmfv.us.auth0.com/v2/logout';
-        window.location.href = 'https://bytehell.xyz/cdn-cgi/access/logout?returnTo=https://bytehell.xyz/';
+        // Logout from Auth0 first, then Cloudflare
+        const auth0LogoutUrl = 'https://dev-rwy1lchhchbalmfv.us.auth0.com/v2/logout?returnTo=' +
+                encodeURIComponent(window.location.origin + '/cdn-cgi/access/logout');
+        window.location.href = auth0LogoutUrl;
       }
     </script>
 
